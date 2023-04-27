@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'button_style.dart';
 
-enum DSButtonType { solid, outline }
+enum DS1ButtonType { solid, outline }
 
-class DSButton extends StatefulWidget {
+class DS1Button extends StatefulWidget {
   final String label;
-  final DSButtonType type;
+  final DS1ButtonType type;
   final String size;
   final bool fullWidth;
   final double? width;
@@ -20,10 +20,10 @@ class DSButton extends StatefulWidget {
   final void Function(bool)? onHighlightChanged;
   final void Function(bool)? onHover;
 
-  const DSButton({
+  const DS1Button({
     super.key,
     this.label = 'Button',
-    this.type = DSButtonType.solid,
+    this.type = DS1ButtonType.solid,
     this.size = 'normal',
     this.fullWidth = false,
     this.isLoading = false,
@@ -40,20 +40,20 @@ class DSButton extends StatefulWidget {
   });
 
   @override
-  State<DSButton> createState() => _DSButtonState();
+  State<DS1Button> createState() => _DS1ButtonState();
 }
 
-class _DSButtonState extends State<DSButton> {
+class _DS1ButtonState extends State<DS1Button> {
   @override
   Widget build(BuildContext context) {
     var box = solidBox(context);
-    var textColor = solidTextColor;
+    var textColor = solidTextColor(context);
     var padding = normalPadding;
     var fontSize = normalFontSize;
     var iconSize = normalIconSize;
     var height = normalHeight;
 
-    if (widget.type == DSButtonType.outline) {
+    if (widget.type == DS1ButtonType.outline) {
       box = outlineBox(context);
       textColor = outlineTextColor(context);
     }
@@ -103,7 +103,7 @@ class _DSButtonState extends State<DSButton> {
                     style: TextStyle(
                       color: textColor,
                       fontSize: fontSize,
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.w600,
                     ),
                   ),
                 if (widget.isLoading == true)

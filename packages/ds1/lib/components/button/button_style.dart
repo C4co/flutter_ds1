@@ -15,15 +15,21 @@ BoxDecoration outlineBox(BuildContext context) => BoxDecoration(
       ),
     );
 
-Color solidTextColor = Colors.white;
-Color outlineTextColor(BuildContext context) =>
-    Theme.of(context).primaryColorDark;
+Color solidTextColor(BuildContext context) {
+  return Theme.of(context).primaryColor.computeLuminance() > 0.5
+      ? Theme.of(context).primaryColorDark
+      : Colors.white;
+}
+
+Color outlineTextColor(BuildContext context) {
+  return Theme.of(context).primaryColorDark;
+}
 
 dynamic normalPadding = const EdgeInsets.symmetric(horizontal: 18);
 dynamic miniPadding = const EdgeInsets.symmetric(horizontal: 10);
 
 double normalFontSize = 15;
-double miniFontSize = 11;
+double miniFontSize = 12;
 
 double normalIconSize = 17;
 double miniIconSize = 12;

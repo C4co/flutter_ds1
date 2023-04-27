@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class DSTimePicker extends StatefulWidget {
+class DS1TimePicker extends StatefulWidget {
   final String? label;
   final Function(TimeOfDay) onChanged;
   final String? Function(String?)? validator;
 
-  const DSTimePicker({
+  const DS1TimePicker({
     super.key,
     this.label,
     required this.onChanged,
@@ -13,10 +13,10 @@ class DSTimePicker extends StatefulWidget {
   });
 
   @override
-  State<DSTimePicker> createState() => _DSTimePickerState();
+  State<DS1TimePicker> createState() => _DS1TimePickerState();
 }
 
-class _DSTimePickerState extends State<DSTimePicker> {
+class _DS1TimePickerState extends State<DS1TimePicker> {
   final inputController = TextEditingController();
   TimeOfDay initialTime = TimeOfDay.now();
 

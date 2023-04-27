@@ -41,8 +41,22 @@ ThemeData ds1Theme({
 
   return ThemeData(
     pageTransitionsTheme: pageTransitionsTheme,
+    primaryColor: color,
+    primaryColorLight: color.shade50,
+    primaryColorDark: color.shade900,
     primarySwatch: color,
     brightness: Brightness.light,
+    dialogTheme: DialogTheme(
+      elevation: 0,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(5),
+      ),
+      titleTextStyle: TextStyle(
+        fontSize: 16,
+        fontWeight: FontWeight.bold,
+        color: color.shade900,
+      ),
+    ),
     appBarTheme: AppBarTheme(
       scrolledUnderElevation: 1,
       elevation: 0,
@@ -50,29 +64,47 @@ ThemeData ds1Theme({
       iconTheme: IconThemeData(
         color: color.shade900,
       ),
-      titleTextStyle: TextStyle(color: color.shade900, fontSize: 18),
+      titleTextStyle: TextStyle(
+        color: color.shade900,
+        fontSize: 18,
+      ),
       backgroundColor: Colors.white,
     ),
     inputDecorationTheme: InputDecorationTheme(
-      contentPadding: const EdgeInsets.symmetric(horizontal: 15, vertical: 0),
+      contentPadding: const EdgeInsets.symmetric(
+        horizontal: 15,
+        vertical: 0,
+      ),
       labelStyle: const TextStyle(
-        fontSize: 14,
+        fontSize: 16,
       ),
       floatingLabelStyle: TextStyle(
-        fontSize: 16,
-        fontWeight: FontWeight.bold,
-        color: color.shade700,
+        fontSize: 18,
+        color: color.shade900,
       ),
       focusedBorder: OutlineInputBorder(
-        borderSide: BorderSide(color: color.shade700),
+        borderSide: BorderSide(
+          color: color.shade800,
+        ),
         gapPadding: 8,
       ),
       border: const OutlineInputBorder(
         gapPadding: 8,
-        borderRadius: BorderRadius.all(Radius.circular(5)),
+        borderRadius: BorderRadius.all(
+          Radius.circular(5),
+        ),
       ),
     ),
     scaffoldBackgroundColor: Colors.white,
     textTheme: GoogleFonts.robotoFlexTextTheme(textTheme),
+    snackBarTheme: SnackBarThemeData(
+      backgroundColor: Colors.black,
+      closeIconColor: Colors.white,
+      actionTextColor: color.shade100,
+      contentTextStyle: TextStyle(
+        color: color.shade50,
+        fontSize: 16,
+      ),
+    ),
   );
 }
