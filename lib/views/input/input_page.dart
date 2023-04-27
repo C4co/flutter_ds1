@@ -9,6 +9,18 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
+  Map<String, dynamic> items = {
+    '🇧🇷 Brasil': '1',
+    '🇺🇸 United States': '2',
+    '🇨🇦 Canada': '3',
+    '🇦🇺 Australia': '4',
+    '🇮🇳 India': '5',
+    '🇨🇳 China': '6',
+    '🇯🇵 Japan': '7',
+    '🇰🇷 South Korea': '8',
+    '🇩🇪 Germany': '9',
+  };
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,36 +31,36 @@ class _InputPageState extends State<InputPage> {
         padding: const EdgeInsets.symmetric(horizontal: 15),
         child: ListView(
           children: [
+            const SizedBox(height: 10),
             const TextField(
               decoration: InputDecoration(
-                labelText: 'Name',
-                prefixIcon: Icon(Icons.person),
+                labelText: 'Normal Input',
+                prefixIcon: Icon(Icons.edit),
               ),
             ),
-            const SizedBox(height: 20),
-            const TextField(
-              decoration: InputDecoration(
-                labelText: 'Email',
-                prefixIcon: Icon(Icons.email),
-              ),
-            ),
-            const SizedBox(height: 20),
-            const TextField(
-              decoration: InputDecoration(
-                labelText: 'Credit Card',
-                prefixIcon: Icon(Icons.credit_card),
-              ),
-            ),
-            const SizedBox(height: 20),
-            DSTimePicker(
+            const SizedBox(height: 25),
+            DS1TimePicker(
               label: "Timer picker",
               onChanged: (timer) {
                 debugPrint(timer.toString());
               },
             ),
-            const SizedBox(height: 20),
-            const Expanded(child: SizedBox()),
-            DSButton(
+            const SizedBox(height: 25),
+            DS1DatePicker(
+              label: "Date picker",
+              onChanged: (date) {
+                debugPrint(date.toString());
+              },
+            ),
+            const SizedBox(height: 25),
+            DS1Select(
+              onChange: (event) {},
+              icon: Icons.flag,
+              items: items,
+              label: "Select country",
+            ),
+            const SizedBox(height: 25),
+            DS1Button(
               label: 'Submit',
               onTap: () {},
             )

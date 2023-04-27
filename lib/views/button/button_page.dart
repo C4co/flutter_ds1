@@ -22,28 +22,28 @@ class _ButtonPageState extends State<ButtonPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const DSButton(
+                const DS1Button(
                   label: 'Full width button',
-                  type: DSButtonType.solid,
+                  type: DS1ButtonType.solid,
                   fullWidth: true,
                 ),
                 const SizedBox(height: 20),
-                const DSButton(
+                const DS1Button(
                   label: 'Full width button',
-                  type: DSButtonType.outline,
+                  type: DS1ButtonType.outline,
                   fullWidth: true,
                 ),
                 const SizedBox(height: 20),
                 Wrap(
                   children: const [
-                    DSButton(
+                    DS1Button(
                       label: 'Button',
-                      type: DSButtonType.solid,
+                      type: DS1ButtonType.solid,
                     ),
                     SizedBox(width: 20),
-                    DSButton(
+                    DS1Button(
                       label: 'Button',
-                      type: DSButtonType.outline,
+                      type: DS1ButtonType.outline,
                     ),
                   ],
                 ),
@@ -52,14 +52,14 @@ class _ButtonPageState extends State<ButtonPage> {
                   spacing: 20,
                   direction: Axis.vertical,
                   children: const [
-                    DSButton(
+                    DS1Button(
                       label: 'Button with icon',
-                      type: DSButtonType.solid,
+                      type: DS1ButtonType.solid,
                       icon: Icons.access_time_sharp,
                     ),
-                    DSButton(
+                    DS1Button(
                       label: 'Button with icon',
-                      type: DSButtonType.outline,
+                      type: DS1ButtonType.outline,
                       icon: Icons.favorite,
                     ),
                   ],
@@ -68,12 +68,12 @@ class _ButtonPageState extends State<ButtonPage> {
                 Wrap(
                   spacing: 20,
                   children: const [
-                    DSButton(
-                      type: DSButtonType.solid,
+                    DS1Button(
+                      type: DS1ButtonType.solid,
                       isLoading: true,
                     ),
-                    DSButton(
-                      type: DSButtonType.outline,
+                    DS1Button(
+                      type: DS1ButtonType.outline,
                       isLoading: true,
                     ),
                   ],
@@ -81,15 +81,15 @@ class _ButtonPageState extends State<ButtonPage> {
                 const SizedBox(height: 20),
                 Wrap(
                   children: const [
-                    DSButton(
+                    DS1Button(
                       label: 'Mini button',
-                      type: DSButtonType.solid,
+                      type: DS1ButtonType.solid,
                       size: 'mini',
                     ),
                     SizedBox(width: 20),
-                    DSButton(
+                    DS1Button(
                       label: 'Mini button',
-                      type: DSButtonType.outline,
+                      type: DS1ButtonType.outline,
                       size: 'mini',
                     ),
                   ],
@@ -99,15 +99,15 @@ class _ButtonPageState extends State<ButtonPage> {
                   spacing: 20,
                   direction: Axis.vertical,
                   children: const [
-                    DSButton(
+                    DS1Button(
                       label: 'Mini button with icon',
-                      type: DSButtonType.solid,
+                      type: DS1ButtonType.solid,
                       size: 'mini',
                       icon: Icons.favorite,
                     ),
-                    DSButton(
+                    DS1Button(
                       label: 'Mini button with icon',
-                      type: DSButtonType.outline,
+                      type: DS1ButtonType.outline,
                       size: 'mini',
                       icon: Icons.favorite,
                     ),
@@ -116,17 +116,17 @@ class _ButtonPageState extends State<ButtonPage> {
                 const SizedBox(height: 20),
                 Wrap(
                   children: const [
-                    DSButton(
+                    DS1Button(
                       label: 'Button with icon',
-                      type: DSButtonType.solid,
+                      type: DS1ButtonType.solid,
                       icon: Icons.favorite,
                       size: 'mini',
                       isLoading: true,
                     ),
                     SizedBox(width: 20),
-                    DSButton(
+                    DS1Button(
                       label: 'Button with icon',
-                      type: DSButtonType.outline,
+                      type: DS1ButtonType.outline,
                       icon: Icons.favorite,
                       size: 'mini',
                       isLoading: true,
@@ -136,18 +136,14 @@ class _ButtonPageState extends State<ButtonPage> {
                 const SizedBox(height: 20),
                 Wrap(
                   children: [
-                    DSButton(
+                    DS1Button(
                       label: 'Button with event',
-                      type: DSButtonType.solid,
+                      type: DS1ButtonType.solid,
                       onTap: () {
-                        showDialog(
+                        DS1Dialog.show(
                           context: context,
-                          builder: (context) {
-                            return const AlertDialog(
-                              title: Text('Alert Dialog'),
-                              content: Text('This is an alert dialog'),
-                            );
-                          },
+                          title: 'Button tapped',
+                          subtitle: 'Button with event tapped',
                         );
                       },
                     ),

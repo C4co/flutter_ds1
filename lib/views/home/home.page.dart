@@ -22,8 +22,12 @@ class _HomePageState extends State<HomePage> {
             onTap: () => context.go('/buttons'),
           ),
           ListTile(
-            title: const Text('Inputs'),
+            title: const Text('Input, Select, Pickers'),
             onTap: () => context.go('/inputs'),
+          ),
+          ListTile(
+            title: const Text('Snackbars'),
+            onTap: () => context.go('/snackbars'),
           ),
         ],
       ),
