@@ -2,31 +2,33 @@ import 'package:flutter/material.dart';
 
 double borderRadius = 5;
 
-BoxDecoration solidBox(BuildContext context) => BoxDecoration(
-      borderRadius: BorderRadius.circular(borderRadius),
-      color: Theme.of(context).primaryColor,
-    );
+BoxDecoration solidBox(BuildContext context) {
+  return BoxDecoration(
+    borderRadius: BorderRadius.circular(borderRadius),
+    color: Theme.of(context).colorScheme.primary,
+  );
+}
 
-BoxDecoration outlineBox(BuildContext context) => BoxDecoration(
-      borderRadius: BorderRadius.circular(borderRadius),
-      border: Border.all(
-        color: Colors.black.withOpacity(0.2),
-        width: 1,
-      ),
-    );
+BoxDecoration outlineBox(BuildContext context) {
+  return BoxDecoration(
+    borderRadius: BorderRadius.circular(borderRadius),
+    border: Border.all(
+      color: Theme.of(context).colorScheme.onPrimaryContainer.withOpacity(0.3),
+      width: 1,
+    ),
+  );
+}
 
 Color solidTextColor(BuildContext context) {
-  return Theme.of(context).primaryColor.computeLuminance() > 0.5
-      ? Theme.of(context).primaryColorDark
-      : Colors.white;
+  return Theme.of(context).colorScheme.onPrimary;
 }
 
 Color outlineTextColor(BuildContext context) {
-  return Theme.of(context).primaryColorDark;
+  return Theme.of(context).colorScheme.primary;
 }
 
-dynamic normalPadding = const EdgeInsets.symmetric(horizontal: 18);
-dynamic miniPadding = const EdgeInsets.symmetric(horizontal: 10);
+dynamic normalPadding = const EdgeInsets.symmetric(horizontal: 25);
+dynamic miniPadding = const EdgeInsets.symmetric(horizontal: 15);
 
 double normalFontSize = 15;
 double miniFontSize = 12;

@@ -36,15 +36,15 @@ class _DS1SelectState extends State<DS1Select> {
       icon: const Icon(Icons.expand_more),
       decoration: inputDecoration,
       elevation: 0,
-      borderRadius: BorderRadius.circular(5),
-      dropdownColor: Theme.of(context).primaryColorLight,
+      borderRadius: BorderRadius.circular(10),
+      dropdownColor: Theme.of(context).colorScheme.secondaryContainer,
       items: widget.items.keys.map((String value) {
         return DropdownMenuItem(
           value: value,
           child: Text(
             value,
-            style: TextStyle(
-              color: Theme.of(context).colorScheme.onSurfaceVariant,
+            style: const TextStyle(
+              // color: Theme.of(context).colorScheme.onSurfaceVariant,
               fontWeight: FontWeight.normal,
             ),
           ),

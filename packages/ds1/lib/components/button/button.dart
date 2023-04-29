@@ -103,7 +103,7 @@ class _DS1ButtonState extends State<DS1Button> {
                     style: TextStyle(
                       color: textColor,
                       fontSize: fontSize,
-                      fontWeight: FontWeight.w600,
+                      fontWeight: FontWeight.w500,
                     ),
                   ),
                 if (widget.isLoading == true)

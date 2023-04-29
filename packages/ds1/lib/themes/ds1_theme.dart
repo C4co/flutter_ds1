@@ -1,35 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
-
-const MaterialColor ds1Color = MaterialColor(
-  0xFF000000,
-  <int, Color>{
-    50: Color(0xFFE3E3E3),
-    100: Color(0xFFc8c8c8),
-    200: Color(0xFFA4A4A4),
-    300: Color(0xFF818181),
-    400: Color(0xFF666666),
-    500: Color(0xFF515151),
-    600: Color(0xFF434343),
-    700: Color(0xFF383838),
-    800: Color(0xFF313131),
-    900: Color(0xFF000000),
-  },
-);
 
 ThemeData ds1Theme({
   required BuildContext context,
-  MaterialColor color = ds1Color,
+  bool dark = false,
+  Color color = Colors.blue,
 }) {
-  final textTheme = Theme.of(context).textTheme;
+  final theme = Theme.of(context);
 
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
-      systemNavigationBarColor: Colors.white,
-      statusBarColor: Colors.white,
-      statusBarBrightness: Brightness.light,
-      statusBarIconBrightness: Brightness.light,
+      statusBarBrightness: Brightness.dark,
+      statusBarIconBrightness: Brightness.dark,
     ),
   );
 
@@ -40,70 +22,45 @@ ThemeData ds1Theme({
   );
 
   return ThemeData(
+    useMaterial3: true,
     pageTransitionsTheme: pageTransitionsTheme,
-    primaryColor: color,
-    primaryColorLight: color.shade50,
-    primaryColorDark: color.shade900,
-    primarySwatch: color,
-    brightness: Brightness.light,
-    dialogTheme: DialogTheme(
-      elevation: 0,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(5),
-      ),
-      titleTextStyle: TextStyle(
-        fontSize: 16,
-        fontWeight: FontWeight.bold,
-        color: color.shade900,
-      ),
-    ),
-    appBarTheme: AppBarTheme(
-      scrolledUnderElevation: 1,
-      elevation: 0,
+    colorSchemeSeed: color,
+    brightness: dark ? Brightness.dark : Brightness.light,
+    appBarTheme: theme.appBarTheme.copyWith(
       centerTitle: true,
-      iconTheme: IconThemeData(
-        color: color.shade900,
+      titleTextStyle: theme.appBarTheme.titleTextStyle?.copyWith(
+        fontSize: 16,
       ),
-      titleTextStyle: TextStyle(
-        color: color.shade900,
-        fontSize: 18,
-      ),
-      backgroundColor: Colors.white,
     ),
-    inputDecorationTheme: InputDecorationTheme(
-      contentPadding: const EdgeInsets.symmetric(
+    dialogTheme: DialogTheme(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10),
+      ),
+    ),
+    drawerTheme: DrawerThemeData(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(0),
+      ),
+    ),
+    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+      selectedLabelStyle: TextStyle(
+        fontSize: 12,
+        fontWeight: FontWeight.bold,
+      ),
+      showUnselectedLabels: true,
+      showSelectedLabels: true,
+      type: BottomNavigationBarType.fixed,
+    ),
+    inputDecorationTheme: const InputDecorationTheme(
+      contentPadding: EdgeInsets.symmetric(
         horizontal: 15,
         vertical: 0,
       ),
-      labelStyle: const TextStyle(
-        fontSize: 16,
-      ),
-      floatingLabelStyle: TextStyle(
-        fontSize: 18,
-        color: color.shade900,
-      ),
-      focusedBorder: OutlineInputBorder(
-        borderSide: BorderSide(
-          color: color.shade800,
-        ),
-        gapPadding: 8,
-      ),
-      border: const OutlineInputBorder(
-        gapPadding: 8,
+      border: OutlineInputBorder(
+        gapPadding: 4,
         borderRadius: BorderRadius.all(
           Radius.circular(5),
         ),
-      ),
-    ),
-    scaffoldBackgroundColor: Colors.white,
-    textTheme: GoogleFonts.robotoFlexTextTheme(textTheme),
-    snackBarTheme: SnackBarThemeData(
-      backgroundColor: Colors.black,
-      closeIconColor: Colors.white,
-      actionTextColor: color.shade100,
-      contentTextStyle: TextStyle(
-        color: color.shade50,
-        fontSize: 16,
       ),
     ),
   );
