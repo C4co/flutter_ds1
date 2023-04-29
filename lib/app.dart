@@ -1,16 +1,33 @@
+import 'package:ds1/themes/ds1_theme.dart';
 import 'package:flutter/material.dart';
-import '/core/core.dart';
-import 'package:ds1/ds1.dart';
+import '/states/states.dart';
+import 'core/core.dart';
 
-class App extends StatelessWidget {
+class App extends StatefulWidget {
   const App({super.key});
 
   @override
+  State<App> createState() => _AppState();
+}
+
+class _AppState extends State<App> {
+  final theme = AppTheme();
+
+  @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      theme: ds1Theme(context: context, color: DS1Colors.red),
-      debugShowCheckedModeBanner: false,
-      routerConfig: router,
+    return ValueListenableBuilder(
+      valueListenable: theme.isDark,
+      builder: (BuildContext context, bool value, Widget? child) {
+        return MaterialApp.router(
+          theme: ds1Theme(
+            context: context,
+            dark: value,
+            color: Colors.green,
+          ),
+          debugShowCheckedModeBanner: false,
+          routerConfig: router,
+        );
+      },
     );
   }
 }

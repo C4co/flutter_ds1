@@ -19,6 +19,10 @@ final router = GoRouter(
           path: 'snackbars',
           builder: (context, state) => const SnackBarPage(),
         ),
+        GoRoute(
+          path: 'texts',
+          builder: (context, state) => const TextPage(),
+        ),
       ],
     ),
   ],

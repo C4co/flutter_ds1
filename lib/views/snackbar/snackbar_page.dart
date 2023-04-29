@@ -13,7 +13,7 @@ class _SnackBarPageState extends State<SnackBarPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Snackbars'),
+        title: const DS1Text('Snackbar'),
       ),
       body: Center(
         child: DS1Button(

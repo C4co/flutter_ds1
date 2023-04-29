@@ -13,7 +13,7 @@ class _ButtonPageState extends State<ButtonPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Buttons'),
+        title: const DS1Text('Buttons'),
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -22,120 +22,83 @@ class _ButtonPageState extends State<ButtonPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const DS1Button(
-                  label: 'Full width button',
-                  type: DS1ButtonType.solid,
-                  fullWidth: true,
-                ),
-                const SizedBox(height: 20),
-                const DS1Button(
-                  label: 'Full width button',
-                  type: DS1ButtonType.outline,
-                  fullWidth: true,
-                ),
                 const SizedBox(height: 20),
                 Wrap(
-                  children: const [
-                    DS1Button(
+                  spacing: 10,
+                  runSpacing: 10,
+                  children: [
+                    const DS1Button(
+                      label: 'Full width button',
+                      type: DS1ButtonType.solid,
+                      fullWidth: true,
+                    ),
+                    const DS1Button(
+                      label: 'Full width button',
+                      type: DS1ButtonType.outline,
+                      fullWidth: true,
+                    ),
+                    const DS1Button(
                       label: 'Button',
                       type: DS1ButtonType.solid,
                     ),
-                    SizedBox(width: 20),
-                    DS1Button(
+                    const DS1Button(
                       label: 'Button',
                       type: DS1ButtonType.outline,
                     ),
-                  ],
-                ),
-                const SizedBox(height: 20),
-                Wrap(
-                  spacing: 20,
-                  direction: Axis.vertical,
-                  children: const [
-                    DS1Button(
+                    const DS1Button(
                       label: 'Button with icon',
                       type: DS1ButtonType.solid,
                       icon: Icons.access_time_sharp,
                     ),
-                    DS1Button(
+                    const DS1Button(
                       label: 'Button with icon',
                       type: DS1ButtonType.outline,
                       icon: Icons.favorite,
                     ),
-                  ],
-                ),
-                const SizedBox(height: 20),
-                Wrap(
-                  spacing: 20,
-                  children: const [
-                    DS1Button(
+                    const DS1Button(
                       type: DS1ButtonType.solid,
                       isLoading: true,
                     ),
-                    DS1Button(
+                    const DS1Button(
                       type: DS1ButtonType.outline,
                       isLoading: true,
                     ),
-                  ],
-                ),
-                const SizedBox(height: 20),
-                Wrap(
-                  children: const [
-                    DS1Button(
+                    const DS1Button(
                       label: 'Mini button',
                       type: DS1ButtonType.solid,
                       size: 'mini',
                     ),
-                    SizedBox(width: 20),
-                    DS1Button(
+                    const DS1Button(
                       label: 'Mini button',
                       type: DS1ButtonType.outline,
                       size: 'mini',
                     ),
-                  ],
-                ),
-                const SizedBox(height: 20),
-                Wrap(
-                  spacing: 20,
-                  direction: Axis.vertical,
-                  children: const [
-                    DS1Button(
+                    const DS1Button(
                       label: 'Mini button with icon',
                       type: DS1ButtonType.solid,
                       size: 'mini',
                       icon: Icons.favorite,
                     ),
-                    DS1Button(
+                    const DS1Button(
                       label: 'Mini button with icon',
                       type: DS1ButtonType.outline,
                       size: 'mini',
                       icon: Icons.favorite,
                     ),
-                  ],
-                ),
-                const SizedBox(height: 20),
-                Wrap(
-                  children: const [
-                    DS1Button(
+                    const DS1Button(
                       label: 'Button with icon',
                       type: DS1ButtonType.solid,
                       icon: Icons.favorite,
                       size: 'mini',
                       isLoading: true,
                     ),
-                    SizedBox(width: 20),
-                    DS1Button(
+                    const DS1Button(
                       label: 'Button with icon',
                       type: DS1ButtonType.outline,
                       icon: Icons.favorite,
                       size: 'mini',
                       isLoading: true,
                     ),
-                  ],
-                ),
-                const SizedBox(height: 20),
-                Wrap(
-                  children: [
                     DS1Button(
                       label: 'Button with event',
                       type: DS1ButtonType.solid,
