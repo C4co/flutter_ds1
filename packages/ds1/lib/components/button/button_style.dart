@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-double borderRadius = 5;
+double borderRadius = 100;
 
 BoxDecoration solidBox(BuildContext context) {
   return BoxDecoration(
@@ -27,7 +27,7 @@ Color outlineTextColor(BuildContext context) {
   return Theme.of(context).colorScheme.primary;
 }
 
-dynamic normalPadding = const EdgeInsets.symmetric(horizontal: 25);
+dynamic normalPadding = const EdgeInsets.symmetric(horizontal: 20);
 dynamic miniPadding = const EdgeInsets.symmetric(horizontal: 15);
 
 double normalFontSize = 15;

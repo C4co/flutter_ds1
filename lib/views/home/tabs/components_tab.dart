@@ -13,21 +13,41 @@ class ComponentsTab extends StatelessWidget {
           title: const Text('Buttons'),
           onTap: () => context.go('/buttons'),
         ),
+        const Divider(height: 0),
         ListTile(
           leading: const Icon(Icons.edit_outlined),
-          title: const Text('Inputs'),
-          subtitle: const Text('text fields, timer picker, date picker'),
+          title: const Text('Inputs and pickers'),
           onTap: () => context.go('/inputs'),
         ),
+        const Divider(height: 0),
         ListTile(
           leading: const Icon(Icons.call_to_action_outlined),
           title: const Text('Snackbars'),
           onTap: () => context.go('/snackbars'),
         ),
+        const Divider(height: 0),
         ListTile(
           leading: const Icon(Icons.text_fields),
           title: const Text('Text'),
           onTap: () => context.go('/texts'),
+        ),
+        const Divider(height: 0),
+        ListTile(
+          leading: const Icon(Icons.border_bottom_outlined),
+          title: const Text('Bottom sheet'),
+          onTap: () => context.go('/bottom-sheet'),
+        ),
+        const Divider(height: 0),
+        ListTile(
+          leading: const Icon(Icons.check_box_outlined),
+          title: const Text('Checkbox'),
+          onTap: () => context.go('/checkbox'),
+        ),
+        const Divider(height: 0),
+        ListTile(
+          leading: const Icon(Icons.auto_awesome_motion),
+          title: const Text('Dialog'),
+          onTap: () => context.go('/dialog'),
         ),
       ],
     );

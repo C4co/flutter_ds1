@@ -1,7 +1,7 @@
 import 'package:ds1/components/text/text.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'tabs/components_tab.dart';
+import 'tabs/examples_tab.dart';
 import '/states/states.dart';
 
 class HomePage extends StatefulWidget {
@@ -31,60 +31,70 @@ class _HomePageState extends State<HomePage> {
           body: DefaultTabController(
             length: 2,
             child: Scaffold(
-              drawer: Drawer(
-                child: ListView(
-                  children: [
-                    const Padding(
-                      padding: EdgeInsets.all(20),
-                      child: DS1Text('Components', bold: true, fontSize: 16),
-                    ),
-                    ListTile(
-                      leading: const Icon(Icons.square_outlined),
-                      title: const Text('Buttons'),
-                      onTap: () => context.go('/buttons'),
-                    ),
-                    ListTile(
-                      leading: const Icon(Icons.edit_outlined),
-                      title: const Text('Inputs'),
-                      onTap: () => context.go('/Inputs'),
-                    ),
-                    ListTile(
-                      leading: const Icon(Icons.call_to_action_outlined),
-                      title: const Text('Snackbars'),
-                      onTap: () => context.go('/snackbars'),
-                    ),
-                    ListTile(
-                      leading: const Icon(Icons.text_fields),
-                      title: const Text('Text'),
-                      onTap: () => context.go('/texts'),
-                    ),
-                  ],
-                ),
-              ),
-              appBar: AppBar(
-                title: const DS1Text('DS1'),
-                actions: [
-                  IconButton(
-                    onPressed: () {
-                      theme.toggleTheme();
-                    },
-                    icon: icon,
+                drawer: Drawer(
+                  child: ListView(
+                    children: [
+                      const Padding(
+                        padding: EdgeInsets.all(20),
+                        child: DS1Text('Components', bold: true, fontSize: 16),
+                      ),
+                      ListTile(
+                        leading: const Icon(Icons.home),
+                        title: const Text('Home'),
+                        onTap: () {},
+                      ),
+                      ListTile(
+                        leading: const Icon(Icons.settings),
+                        title: const Text('Settings'),
+                        onTap: () {},
+                      ),
+                      ListTile(
+                        leading: const Icon(Icons.chat),
+                        title: const Text('Chat'),
+                        onTap: () {},
+                      ),
+                    ],
                   ),
-                ],
-                bottom: const TabBar(
-                  tabs: [
-                    Tab(text: 'Components'),
-                    Tab(text: 'Example'),
+                ),
+                appBar: AppBar(
+                  title: const DS1Text('DS1'),
+                  actions: [
+                    IconButton(
+                      onPressed: () {
+                        theme.toggleTheme();
+                      },
+                      icon: icon,
+                    ),
+                  ],
+                  bottom: const TabBar(
+                    tabs: [
+                      Tab(text: 'Components'),
+                      Tab(text: 'Example'),
+                    ],
+                  ),
+                ),
+                body: const TabBarView(
+                  children: [
+                    ComponentsTab(),
+                    ExampleTab(),
                   ],
                 ),
-              ),
-              body: const TabBarView(
-                children: [
-                  ComponentsTab(),
-                  Icon(Icons.directions_transit),
-                ],
-              ),
-            ),
+                bottomNavigationBar: BottomNavigationBar(
+                  items: const [
+                    BottomNavigationBarItem(
+                      icon: Icon(Icons.home),
+                      label: 'Home',
+                    ),
+                    BottomNavigationBarItem(
+                      icon: Icon(Icons.settings),
+                      label: 'Settings',
+                    ),
+                    BottomNavigationBarItem(
+                      icon: Icon(Icons.chat),
+                      label: 'Chat',
+                    ),
+                  ],
+                )),
           ),
         );
       },

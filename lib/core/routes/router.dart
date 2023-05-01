@@ -23,6 +23,18 @@ final router = GoRouter(
           path: 'texts',
           builder: (context, state) => const TextPage(),
         ),
+        GoRoute(
+          path: 'bottom-sheet',
+          builder: (context, state) => const BottomSheetPage(),
+        ),
+        GoRoute(
+          path: 'checkbox',
+          builder: (context, state) => const CheckboxPage(),
+        ),
+        GoRoute(
+          path: 'dialog',
+          builder: (context, state) => const DialogPage(),
+        ),
       ],
     ),
   ],
