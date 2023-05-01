@@ -49,6 +49,12 @@ class ComponentsTab extends StatelessWidget {
           title: const Text('Dialog'),
           onTap: () => context.go('/dialog'),
         ),
+        const Divider(height: 0),
+        ListTile(
+          leading: const Icon(Icons.label_rounded),
+          title: const Text('Chips'),
+          onTap: () => context.go('/chips'),
+        ),
       ],
     );
   }

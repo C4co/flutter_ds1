@@ -35,6 +35,10 @@ final router = GoRouter(
           path: 'dialog',
           builder: (context, state) => const DialogPage(),
         ),
+        GoRoute(
+          path: 'chips',
+          builder: (context, state) => const ChipsPage(),
+        ),
       ],
     ),
   ],

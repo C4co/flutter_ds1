@@ -6,3 +6,4 @@ export './text/text_page.dart';
 export './bottom_sheet/bottom_sheet.dart';
 export './checkbox/checkbox_page.dart';
 export './dialog/dialog_page.dart';
+export './chips/chips.dart';
