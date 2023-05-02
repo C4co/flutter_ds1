@@ -39,6 +39,10 @@ final router = GoRouter(
           path: 'chips',
           builder: (context, state) => const ChipsPage(),
         ),
+        GoRoute(
+          path: 'dragable-scrollable-sheet',
+          builder: (context, state) => const DragableScrollableSheetPage(),
+        ),
       ],
     ),
   ],

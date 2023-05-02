@@ -55,6 +55,12 @@ class ComponentsTab extends StatelessWidget {
           title: const Text('Chips'),
           onTap: () => context.go('/chips'),
         ),
+        const Divider(height: 0),
+        ListTile(
+          leading: const Icon(Icons.drag_handle_outlined),
+          title: const Text('Dragable scrollable sheet'),
+          onTap: () => context.go('/dragable-scrollable-sheet'),
+        ),
       ],
     );
   }
