@@ -22,7 +22,7 @@ class _AppState extends State<App> {
           theme: ds1Theme(
             context: context,
             dark: value,
-            color: Colors.purple,
+            color: Colors.blue,
           ),
           debugShowCheckedModeBanner: false,
           routerConfig: router,
