@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+PageTransitionsTheme pageTransitionsTheme = const PageTransitionsTheme(
+  builders: <TargetPlatform, PageTransitionsBuilder>{
+    TargetPlatform.android: CupertinoPageTransitionsBuilder(),
+  },
+);
+
 ThemeData ds1Theme({
   required BuildContext context,
   bool dark = false,
@@ -10,26 +16,22 @@ ThemeData ds1Theme({
 
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
+      systemNavigationBarIconBrightness: Brightness.dark,
+      systemNavigationBarColor: Colors.black,
       statusBarBrightness: Brightness.dark,
       statusBarIconBrightness: Brightness.dark,
     ),
   );
 
-  PageTransitionsTheme pageTransitionsTheme = const PageTransitionsTheme(
-    builders: <TargetPlatform, PageTransitionsBuilder>{
-      TargetPlatform.android: CupertinoPageTransitionsBuilder(),
-    },
-  );
-
   return ThemeData(
     useMaterial3: true,
-    pageTransitionsTheme: pageTransitionsTheme,
+    // pageTransitionsTheme: pageTransitionsTheme,
     colorSchemeSeed: color,
     brightness: dark ? Brightness.dark : Brightness.light,
     appBarTheme: theme.appBarTheme.copyWith(
       centerTitle: true,
       titleTextStyle: theme.appBarTheme.titleTextStyle?.copyWith(
-        fontSize: 16,
+        fontSize: 20,
       ),
     ),
     dialogTheme: DialogTheme(
