@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 PageTransitionsTheme pageTransitionsTheme = const PageTransitionsTheme(
   builders: <TargetPlatform, PageTransitionsBuilder>{
@@ -13,15 +12,6 @@ ThemeData ds1Theme({
   Color color = Colors.blue,
 }) {
   final theme = Theme.of(context);
-
-  SystemChrome.setSystemUIOverlayStyle(
-    const SystemUiOverlayStyle(
-      systemNavigationBarIconBrightness: Brightness.dark,
-      systemNavigationBarColor: Colors.black,
-      statusBarBrightness: Brightness.dark,
-      statusBarIconBrightness: Brightness.dark,
-    ),
-  );
 
   return ThemeData(
     useMaterial3: true,
