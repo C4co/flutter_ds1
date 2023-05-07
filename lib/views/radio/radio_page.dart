@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ds1/ds1.dart';
 
 class RadioPage extends StatefulWidget {
   const RadioPage({Key? key}) : super(key: key);
@@ -13,7 +14,7 @@ class _RadioPageState extends State<RadioPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Radio Buttons'),
+        title: const DS1Text('Radio Buttons'),
       ),
       body: Center(
         child: Column(
