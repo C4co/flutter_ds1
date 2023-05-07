@@ -57,9 +57,15 @@ class ComponentsTab extends StatelessWidget {
         ),
         const Divider(height: 0),
         ListTile(
-          leading: const Icon(Icons.drag_handle_outlined),
+          leading: const Icon(Icons.back_hand),
           title: const Text('Dragable scrollable sheet'),
           onTap: () => context.go('/dragable-scrollable-sheet'),
+        ),
+        const Divider(height: 0),
+        ListTile(
+          leading: const Icon(Icons.radio_button_checked_outlined),
+          title: const Text('Radio'),
+          onTap: () => context.go('/radio'),
         ),
       ],
     );

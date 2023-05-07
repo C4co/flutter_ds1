@@ -43,6 +43,10 @@ final router = GoRouter(
           path: 'dragable-scrollable-sheet',
           builder: (context, state) => const DragableScrollableSheetPage(),
         ),
+        GoRoute(
+          path: 'radio',
+          builder: (context, state) => const RadioPage(),
+        ),
       ],
     ),
   ],

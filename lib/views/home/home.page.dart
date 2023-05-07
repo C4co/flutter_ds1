@@ -31,70 +31,75 @@ class _HomePageState extends State<HomePage> {
           body: DefaultTabController(
             length: 2,
             child: Scaffold(
-                drawer: Drawer(
-                  child: ListView(
-                    children: [
-                      const Padding(
-                        padding: EdgeInsets.all(20),
-                        child: DS1Text('Components', bold: true, fontSize: 16),
-                      ),
-                      ListTile(
-                        leading: const Icon(Icons.home),
-                        title: const Text('Home'),
-                        onTap: () {},
-                      ),
-                      ListTile(
-                        leading: const Icon(Icons.settings),
-                        title: const Text('Settings'),
-                        onTap: () {},
-                      ),
-                      ListTile(
-                        leading: const Icon(Icons.chat),
-                        title: const Text('Chat'),
-                        onTap: () {},
-                      ),
-                    ],
-                  ),
-                ),
-                appBar: AppBar(
-                  title: const DS1Text('DS1'),
-                  actions: [
-                    IconButton(
-                      onPressed: () {
-                        theme.toggleTheme();
-                      },
-                      icon: icon,
-                    ),
-                  ],
-                  bottom: const TabBar(
-                    tabs: [
-                      Tab(text: 'Components'),
-                      Tab(text: 'Example'),
-                    ],
-                  ),
-                ),
-                body: const TabBarView(
+              drawer: Drawer(
+                child: ListView(
                   children: [
-                    ComponentsTab(),
-                    ExampleTab(),
+                    const Padding(
+                      padding: EdgeInsets.all(20),
+                      child: DS1Text('Components', bold: true, fontSize: 16),
+                    ),
+                    ListTile(
+                      leading: const Icon(Icons.home),
+                      title: const Text('Home'),
+                      onTap: () {},
+                    ),
+                    ListTile(
+                      leading: const Icon(Icons.settings),
+                      title: const Text('Settings'),
+                      onTap: () {},
+                    ),
+                    ListTile(
+                      leading: const Icon(Icons.chat),
+                      title: const Text('Chat'),
+                      onTap: () {},
+                    ),
                   ],
                 ),
-                bottomNavigationBar: BottomNavigationBar(
-                  items: const [
-                    BottomNavigationBarItem(
-                      icon: Icon(Icons.home),
-                      label: 'Home',
-                    ),
-                    BottomNavigationBarItem(
-                      icon: Icon(Icons.settings),
-                      label: 'Settings',
-                    ),
-                    BottomNavigationBarItem(
-                      icon: Icon(Icons.chat),
-                      label: 'Chat',
-                    ),
+              ),
+              appBar: AppBar(
+                title: const DS1Text('DS1'),
+                actions: [
+                  IconButton(
+                    onPressed: () {
+                      theme.toggleTheme();
+                    },
+                    icon: icon,
+                  ),
+                ],
+                bottom: const TabBar(
+                  tabs: [
+                    Tab(text: 'Components'),
+                    Tab(text: 'Example'),
                   ],
-                )),
+                ),
+              ),
+              body: const TabBarView(
+                children: [
+                  ComponentsTab(),
+                  ExampleTab(),
+                ],
+              ),
+              bottomNavigationBar: BottomNavigationBar(
+                items: const [
+                  BottomNavigationBarItem(
+                    icon: Icon(Icons.home),
+                    label: 'Home',
+                  ),
+                  BottomNavigationBarItem(
+                    icon: Icon(Icons.settings),
+                    label: 'Settings',
+                  ),
+                  BottomNavigationBarItem(
+                    icon: Icon(Icons.chat),
+                    label: 'Chat',
+                  ),
+                ],
+              ),
+              floatingActionButton: FloatingActionButton(
+                onPressed: () {},
+                child: const Icon(Icons.add),
+              ),
+            ),
           ),
         );
       },
