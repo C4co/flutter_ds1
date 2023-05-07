@@ -1,11 +1,5 @@
 import 'package:flutter/material.dart';
 
-PageTransitionsTheme pageTransitionsTheme = const PageTransitionsTheme(
-  builders: <TargetPlatform, PageTransitionsBuilder>{
-    TargetPlatform.android: CupertinoPageTransitionsBuilder(),
-  },
-);
-
 ThemeData ds1Theme({
   required BuildContext context,
   bool dark = false,
@@ -15,8 +9,12 @@ ThemeData ds1Theme({
 
   return ThemeData(
     useMaterial3: true,
-    // pageTransitionsTheme: pageTransitionsTheme,
     colorSchemeSeed: color,
+    pageTransitionsTheme: const PageTransitionsTheme(
+      builders: {
+        TargetPlatform.android: OpenUpwardsPageTransitionsBuilder(),
+      },
+    ),
     brightness: dark ? Brightness.dark : Brightness.light,
     appBarTheme: theme.appBarTheme.copyWith(
       centerTitle: true,
