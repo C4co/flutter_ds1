@@ -9,4 +9,3 @@ export "./components/snackbar/snackbar.dart";
 export "./components/text/text.dart";
 
 export 'themes/ds1_theme.dart';
-export "./colors/colors.dart";
