@@ -3,7 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:ds1/ds1.dart';
 import '../app.dart';
 
-testButton() {
+void main() {
   testWidgets('Check solid style', (WidgetTester tester) async {
     await tester.pumpWidget(const App(
       children: [
