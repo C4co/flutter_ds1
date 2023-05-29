@@ -22,13 +22,13 @@ class _BottomSheetPageState extends State<BottomSheetPage> {
             showModalBottomSheet(
               context: context,
               builder: (BuildContext context) {
-                return SizedBox(
+                return const SizedBox(
                   height: 1000,
                   child: Center(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       mainAxisSize: MainAxisSize.min,
-                      children: const [
+                      children: [
                         DS1Text('Bottom sheet'),
                       ],
                     ),

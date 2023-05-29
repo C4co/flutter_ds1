@@ -19,11 +19,11 @@ class _ChipsPageState extends State<ChipsPage> {
       appBar: AppBar(
         title: const DS1Text('Chips'),
       ),
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.all(20),
+      body: const SingleChildScrollView(
+        padding: EdgeInsets.all(20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: const [
+          children: [
             ChoiceChipsExample(),
             Divider(height: 50),
             InputChipsExample(),
